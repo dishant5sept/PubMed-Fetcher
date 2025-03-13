@@ -1,0 +1,27 @@
+[project]
+name = "pubmed-fetcher"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Dishant",email = "Dishantyadav10s@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "requests (>=2.32.3,<3.0.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "typer (>=0.15.2,<0.16.0)",
+    "notebook (>=7.3.2,<8.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "pubmed_fetcher", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+get-papers-list = "pubmed_fetcher.cli:get_papers"
+
